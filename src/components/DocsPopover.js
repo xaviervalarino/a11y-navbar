@@ -43,10 +43,15 @@ const productPages = [
 ];
 
 const Section = ({ title, children }) => {
+  // Using an ID to label the listitem, otherwise the listitem name shows up
+  // as an amalgum of `title` + the children text in the Acccessibility Tree
+  const id = title.toLowerCase();
   return (
-    <Flex.Item role='listitem'>
+    <Flex.Item role='listitem' aria-labelledby={id}>
       <Box marginBottom={2}>
-        <Text id='solutions' size='sm'>{title}</Text>
+        <Text size='sm'>
+          <span id={id}>{title}</span>
+        </Text>
       </Box>
       { children }
     </Flex.Item>
