@@ -42,16 +42,17 @@ const productPages = [
   }
 ];
 
-const SectionList = ({ sectionName, children }) => {
+const Section = ({ title, children }) => {
   return (
     <Flex.Item role='listitem'>
       <Box marginBottom={2}>
-        <Text id='solutions' size='sm'>{sectionName}</Text>
+        <Text id='solutions' size='sm'>{title}</Text>
       </Box>
       { children }
     </Flex.Item>
   );
 }
+
 const ListOfPages = ({ pages }) => {
   return (
     <Flex role='list' gap={0} direction='column'>
@@ -95,12 +96,12 @@ export default function DocsPopover ({ anchor, ariaControlsID, closePopover }) {
         margin={4}
       >
         <Flex gap={8} direction='column'>
-          <SectionList sectionName='Solutions'>
+          <Section title='Solutions'>
             <ListOfPages pages={solutionsPages} />
-          </SectionList>
-          <SectionList sectionName='products'>
+          </Section>
+          <Section title='Products'>
             <ListOfPages pages={productPages} />
-          </SectionList>
+          </Section>
         </Flex>
       </Box>
     </Popover>
