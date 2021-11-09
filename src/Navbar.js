@@ -13,11 +13,13 @@ import DocsDropdown from './components/DocsDropdown';
 import Annotations from './components/Annotations';
 
 export default function Navbar() {
+
+
   return (
     <>
       <Box
         as='nav'
-        aria-label='Main'
+        aria-label='Site'
         borderStyle='shadow'
         width="100vw"
         padding={2}
