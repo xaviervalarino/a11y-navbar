@@ -38,7 +38,7 @@ export default function Navbar() {
           </Flex.Item>
           <Flex.Item role='listitem'>
             <Button
-              accessibilityLabel='Current page: Apps'
+              accessibilityLabel='Apps'
               text='Apps'
               color='white'
               role='link'
