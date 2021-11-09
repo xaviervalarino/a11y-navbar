@@ -1,10 +1,9 @@
 import { useState, useRef } from 'react';
-import { Box, Button } from 'gestalt';
+import { Button } from 'gestalt';
 
 import DocsPopover from './DocsPopover';
 
 export default function DocsDropdown () {
-  const dropdownID = 'Docs list';
   const [ dropdownOpen, setDropdownOpen ] = useState(false);
   const anchorRef = useRef();
 
@@ -13,11 +12,11 @@ export default function DocsDropdown () {
   };
 
   return (
-    <Box role='list'>
+    <>
       <Button
         accessibilityLabel='Links to Docs pages'
         accessibilityExpanded={dropdownOpen}
-        accessibilityControls={dropdownID}
+        accessibilityControls='docs_list'
         text='Docs'
         color='white'
         role='button'
@@ -28,10 +27,10 @@ export default function DocsDropdown () {
       { dropdownOpen && (
         <DocsPopover
           anchor={anchorRef}
-          ariaControlsID={dropdownID}
+          ariaControlsID='docs_list'
           closePopover={ () => setDropdownOpen(false) }
         />
       )}
-    </Box>
+    </>
   );
 }
