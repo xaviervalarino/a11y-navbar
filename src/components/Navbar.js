@@ -19,10 +19,10 @@ export default function Navbar() {
       justifyContent='end'
     >
       <Flex role='list' gap={2} alignItems='center'>
-        <Flex.Item role='listitem'>
+        <Box role='listitem'>
           <DocsDropdown />
-        </Flex.Item>
-        <Flex.Item role='listitem'>
+        </Box>
+        <Box role='listitem'>
           <Button
             accessibilityLabel='Apps'
             text='Apps'
@@ -30,8 +30,8 @@ export default function Navbar() {
             role='link'
             href='/'
           />
-        </Flex.Item>
-        <Flex.Item role='listitem'>
+        </Box>
+        <Box role='listitem'>
           <TapArea
             accessibilityLabel='Your Pinterest user page'
             role='link'
@@ -44,8 +44,8 @@ export default function Navbar() {
             size='xs'
           />
           </TapArea>
-        </Flex.Item>
-        <Flex.Item role='listitem'>
+        </Box>
+        <Box role='listitem'>
           <IconButton
             accessibilityLabel='More options'
             icon='arrow-down'
@@ -53,7 +53,7 @@ export default function Navbar() {
             size='xs'
             color='darkGray'
           />
-        </Flex.Item>
+        </Box>
       </Flex>
     </Box>
   );

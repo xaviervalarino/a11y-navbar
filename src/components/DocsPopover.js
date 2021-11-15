@@ -47,14 +47,14 @@ const Section = ({ title, children }) => {
   // as an amalgum of `title` + the children text in the Acccessibility Tree
   const id = title.toLowerCase();
   return (
-    <Flex.Item role='listitem' aria-labelledby={id}>
+    <Box role='listitem' aria-labelledby={id}>
       <Box marginBottom={2}>
         <Text size='sm'>
           <span id={id}>{title}</span>
         </Text>
       </Box>
       { children }
-    </Flex.Item>
+    </Box>
   );
 }
 
@@ -62,7 +62,7 @@ const ListOfPages = ({ pages }) => {
   return (
     <Flex role='list' gap={0} direction='column'>
       { pages.map( ({ key, href, node }) => (
-        <Flex.Item  role='listitem' key={key}>
+        <Box role='listitem' key={key}>
           <TapArea
             role='link'
             rounding={4}
@@ -78,7 +78,7 @@ const ListOfPages = ({ pages }) => {
               {node}
             </Box>
           </TapArea>
-        </Flex.Item>
+        </Box>
       ))}
     </Flex>
   );
